@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Calculator Chaos</title>
+		<link rel="stylesheet" type="text/css" href="index.css">
+	</head>
+	<body>
+		<div id="game">
+			<h1 style="text-align: center; margin: 0;">Calculator Chaos</h1>
+			<div id="loading-screen" class="screen active">
+				<p>Loading...</p>
+			</div>
+			<div id="main-screen" class="screen">
+				<div>
+					<img class="man-img" src="man.svg">
+					<p>Justin dropped his calculator</p>
+					<p>and damaged many of the</p>
+					<p>buttons. Can you help him</p>
+					<p>calculate the given numbers</p>
+					<p>with the few buttons he has left?</p>
+					<br>
+					<select id="level-select">
+					</select>
+					<button id="begin-level-button">Begin</button>
+				</div>
+			</div>
+			<div id="game-screen" class="screen">
+				<div class="column">
+					<div class="game-running">
+						<p>Most of the keys have</p>
+						<p>fallen off the calculator.</p>
+						<p>You have <span class="yellow-text"><span id="level-minutes"></span> minutes</span> to</p>
+						<p>make the following eight</p>
+						<p>numbers:</p>
+					</div>
+					<div class="game-lost">
+						<h1>Time's up!</h1>
+						<img class="man-img" src="man.svg">
+					</div>
+					<table id="goals">
+					</table>
+					<br>
+					<button id="help-button">Help</button>
+					<div id="help-modal" class="modal">
+						<h1>Help Files</h1>
+						<p>
+							Numbers and operators can be
+							used in any combination
+						</p>
+						<h2>Button Explanations</h2>
+						<p>
+							Equals: Shows the total value after
+							one or more number operations
+						</p>
+						<p>
+							AC: Clears the screen but does not
+							erase numbers in memory.
+						</p>
+						<p>
+							Min: The memory input button
+							allows you to store the current
+							calculator value in memory.
+						</p>
+						<p>
+							MR: The memory recall button
+							allows you to display the number
+							in memory.
+						</p>
+						<img id="help-close" src="x-button.svg">
+					</div>
+				</div>
+				<div class="column">
+					<h1>Level <span class="level-number"></span></h1>
+					<table id="calculator">
+						<tr>
+							<td colspan="5"><span id="memory-indicator">M</span><input id="calculator-output" readonly autocomplete="off"></td>
+						</tr>
+						<tr>
+							<td>Min</td>
+							<td>M+</td>
+							<td>M-</td>
+							<td>MR</td>
+						</tr>
+						<tr>
+							<td>7</td>
+							<td>8</td>
+							<td>9</td>
+							<td>÷</td>
+							<td id="ac-button">AC</td>
+						</tr>
+						<tr>
+							<td>4</td>
+							<td>5</td>
+							<td>6</td>
+							<td>×</td>
+							<td>X<sup>2</sup></td>
+						</tr>
+						<tr>
+							<td>1</td>
+							<td>2</td>
+							<td>3</td>
+							<td>−</td>
+							<td>√</td>
+						</tr>
+						<tr>
+							<td>.</td>
+							<td>0</td>
+							<td>+/-</td>
+							<td>+</td>
+							<td id="equals-button">=</td>
+						</tr>
+					</table>
+					<br>
+					<div class="game-running">
+						<button id="begin-button">Begin</button>
+						<button id="reset-button">Reset</button>
+					</div>
+					<div class="game-lost">
+						<button class="again-button">Again?</button>
+					</div>
+					<br>
+					<div id="time-remaining-wrapper">
+						Time Remaining: <span class="time-remaining"></span>
+					</div>
+				</div>
+			</div>
+			<div id="won-screen" class="screen">
+				<img style="float: left;" src="man.svg">
+				<h2>Excellent Work!</h2>
+				<p>Level <span class="level-number"></span> was completed with success!</p>
+				<br>
+				<p>The time left was <span class="time-remaining"></span>
+				<button class="again-button">Again?</button>
+			</div>
+		</div>
+		<script type="text/javascript" src="index.js"></script>
+	</body>
+</html>
